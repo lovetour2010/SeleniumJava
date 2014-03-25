@@ -15,7 +15,7 @@ public class SimpleLocate {
 		String filePath="file:///"+file.getAbsolutePath();
 		System.out.printf("now access %s\n", filePath);
 		dr.get(filePath);
-		Thread.sleep(10000);
+		Thread.sleep(1000);
 		
 //  by id
 		dr.findElement(By.id("inputEmail")).click();
@@ -25,6 +25,7 @@ public class SimpleLocate {
 		dr.findElement(By.name("password"));
 		Thread.sleep(1000);
 		
+		
 //  by tagname
 		String classOfForm=dr.findElement(By.tagName("form")).getAttribute("class");
 		System.out.printf("%s\n", classOfForm);
@@ -32,17 +33,17 @@ public class SimpleLocate {
 		
 //  by link text
 		WebElement link=dr.findElement(By.linkText("register"));
-		((JavascriptExecutor)dr).executeScript("$(arguments[0].fadeOut().fadeIn() ", link);
+		((JavascriptExecutor)dr).executeScript("$(arguments[0]).fadeOut().fadeIn();", link);
 		Thread.sleep(1000);
 		
 //  by partial link text
 		WebElement sameLink=dr.findElement(By.partialLinkText("reg"));
-		((JavascriptExecutor)dr).executeScript("$(arguments[0].fadeOut().fadeIn() ", sameLink);
+		((JavascriptExecutor)dr).executeScript("$(arguments[0]).fadeOut().fadeIn();", sameLink);
 		Thread.sleep(1000);
 		
 //  by css selector
 		WebElement div=dr.findElement(By.cssSelector(".controls"));
-		((JavascriptExecutor)dr).executeScript("$(arguments[0].fadeOut().fadeIn()", div);
+		((JavascriptExecutor)dr).executeScript("$(arguments[0]).fadeOut().fadeIn();", div);
 		Thread.sleep(1000);
 		
 //  by xpath
